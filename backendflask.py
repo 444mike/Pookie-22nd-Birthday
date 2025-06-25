@@ -1,6 +1,12 @@
 import streamlit as st
 from datetime import datetime
 from streamlit_autorefresh import st_autorefresh
+from dateutil.relativedelta import relativedelta
+from datetime import datetime
+
+# current time
+now = datetime.now()
+
 
 
 # Set your anniversary date here
@@ -12,6 +18,16 @@ st_autorefresh(interval=1000, limit=None, key="refresh")
 
 
 st.title("💖 Our Anniversary Clock 💖")
+
+# Calculate detailed duration
+rd = relativedelta(now, anniversary)
+
+years = rd.years
+months = rd.months
+days = rd.days
+
+st.subheader("🕰️ Time We've Been Together")
+st.markdown(f"{years} years, {months} months, {days} days")
 
 now = datetime.now()
 delta = now - anniversary
