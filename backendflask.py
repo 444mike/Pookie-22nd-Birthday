@@ -17,36 +17,36 @@ st.set_page_config(page_title="Our Time Together ❤️", layout="centered")
 
 st.markdown("""
     <style>
-    /* Make everything bigger and cuter */
-    html, body, [class*="css"]  {
+    .stApp {
+        background: linear-gradient(135deg, #ffe4ec, #e0f7fa);
+        color: #333333;
+    }
+
+    h1, h2, h3, .stMarkdown, .stMarkdown p {
+        color: #222222 !important;
+        text-shadow: 1px 1px 2px #ffffff80;
+    }
+
+    .stMarkdown ul li {
+        color: #444444 !important;
         font-size: 20px;
-        font-family: 'Segoe UI', sans-serif;
-        background-color: #fff0f5;
     }
 
-    h1 {
-        text-align: center;
-        font-size: 50px;
+    .highlight {
+        font-size: 22px;
+        font-weight: bold;
         color: #c71585;
+        text-align: center;
     }
 
-    .block-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        padding-left: 3rem;
-        padding-right: 3rem;
-    }
-
-    .stMarkdown p {
-        font-size: 24px;
-        line-height: 1.6;
-    }
-
-    footer, header {
+    header, footer {
         visibility: hidden;
+        display: none;
     }
     </style>
 """, unsafe_allow_html=True)
+
+
 
 
 
@@ -66,10 +66,9 @@ minutes = rd.minutes
 seconds = rd.seconds
 
 # Display in Streamlit
-st.subheader("🕰️ Time We've Been Together")
+st.subheader("🕰️ Time We've Been Together:")
 st.markdown(f"""
     <div style='text-align: center; font-size: 26px;'>
-        <p>We've been together for:</p>
         <p><strong>{years}</strong> years, <strong>{months}</strong> months, <strong>{days}</strong> days, <strong>{hours}</strong> hours, <strong>{minutes}</strong> minutes, <strong>{seconds}</strong> seconds</p>
     </div>
 """, unsafe_allow_html=True)
