@@ -2,7 +2,8 @@ import streamlit as st
 from datetime import datetime
 
 # Set your anniversary date here
-anniversary = datetime(2021, 6, 24, 20, 0, 0)
+anniversary = datetime(2022, 11, 25)
+
 
 st.set_page_config(page_title="Our Time Together ❤️", layout="centered")
 
