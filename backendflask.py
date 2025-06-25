@@ -1,11 +1,15 @@
 import streamlit as st
 from datetime import datetime
+from streamlit_autorefresh import st_autorefresh
+
 
 # Set your anniversary date here
 anniversary = datetime(2022, 11, 25)
 
 
 st.set_page_config(page_title="Our Time Together ❤️", layout="centered")
+st_autorefresh(interval=1000, limit=None, key="refresh")
+
 
 st.title("💖 Our Anniversary Clock 💖")
 
