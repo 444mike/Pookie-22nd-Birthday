@@ -19,17 +19,19 @@ st_autorefresh(interval=1000, limit=None, key="refresh")
 
 st.title("💖 Our Anniversary Clock 💖")
 
-# Calculate detailed duration
+# Main breakdown
 rd = relativedelta(now, anniversary)
-
 years = rd.years
 months = rd.months
 days = rd.days
+hours = rd.hours
+minutes = rd.minutes
+seconds = rd.seconds
 
+# Display in Streamlit
 st.subheader("🕰️ Time We've Been Together")
-st.markdown(f"{years} years, {months} months, {days} days")
+st.markdown(f"""{years} years, {months} months, {days} days, {hours} hours, {minutes} minutes, {seconds} seconds""")
 
-now = datetime.now()
 delta = now - anniversary
 
 seconds = int(delta.total_seconds())
@@ -38,10 +40,8 @@ hours = minutes // 60
 days = delta.days
 weeks = days // 7
 months = days // 30  # rough estimate
-years = days // 365  # rough estimate
 
 st.markdown(f"""
-- **Years:** {years}
 - **Months:** {months}
 - **Weeks:** {weeks}
 - **Days:** {days}
